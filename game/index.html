@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Lantern Keeper's Study: an original spot-the-difference game. Find all 7 differences between two lantern-lit pictures of a cosy study at dusk.">
+<title>The Lantern Keeper's Study — Spot the Difference</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>The Lantern Keeper's Study</h1>
+    <p class="subtitle">A spot-the-difference game &middot; find all 7 differences before the lantern burns low</p>
+    <p class="howto"><b>How to play:</b> study the two pictures side by side &mdash; they look the same,
+    but 7 small things differ. Click a difference on either picture to ring it.
+    A wrong click counts as a miss. Stuck? Press <b>H</b> for a hint (3 per game).
+    Press <b>R</b> to start over.</p>
+  </header>
+
+  <main class="boards">
+    <figure class="panel" id="panel-left">
+      <figcaption><span>Picture A</span><span>left</span></figcaption>
+      <div class="scene" aria-label="Picture A"></div>
+    </figure>
+    <figure class="panel" id="panel-right">
+      <figcaption><span>Picture B</span><span>right</span></figcaption>
+      <div class="scene" aria-label="Picture B"></div>
+    </figure>
+  </main>
+
+  <div class="hud" role="status">
+    <span class="count" id="found-count">Found 0 / 7</span>
+    <span class="remain" id="remain-count">7 remain</span>
+    <span class="timer" id="timer">00:00</span>
+    <span class="misses" id="miss-count">Misses: 0</span>
+    <button id="hint-btn" type="button">Hint (3 left)</button>
+    <button id="restart-btn" type="button" class="secondary">Restart</button>
+    <button id="sound-btn" type="button" class="secondary">Sound: on</button>
+  </div>
+
+  <p class="foot">Keyboard: <kbd>H</kbd> hint &middot; <kbd>R</kbd> restart &middot;
+  click a difference on either picture. All art is hand-drawn for this game.</p>
+</div>
+
+<div class="overlay hidden" id="win-overlay">
+  <div class="win-card">
+    <h2>You found them all!</h2>
+    <p>The lantern keeper can finally rest &mdash; every difference in the study is ringed.</p>
+    <p>Your time: <span class="big-time" id="win-time">00:00</span></p>
+    <p>Misses: <span id="win-misses">0</span></p>
+    <button id="again-btn" type="button">Play Again</button>
+  </div>
+</div>
+
+<script src="src/differences.js"></script>
+<script src="src/scene.js"></script>
+<script src="src/game.js"></script>
+</body>
+</html>
